@@ -3,7 +3,13 @@
 # LG TV Input Switch Script
 # Changes the input source on LG TV
 
-TV_IP="10.0.0.61"
+# Load TV IP from .env file
+if [ -f "$(dirname "$0")/../.env" ]; then
+    TV_IP=$(grep "^TV_IP=" "$(dirname "$0")/../.env" | cut -d'=' -f2)
+fi
+
+# Fallback to default if not found
+TV_IP=${TV_IP:-"10.0.0.75"}
 TV_PORT="3000"
 
 # Available input sources for LG webOS TVs

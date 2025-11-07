@@ -2,8 +2,23 @@
 
 // LG TV Control using lgtv2 module
 const LGTV = require('lgtv2');
+const fs = require('fs');
+const path = require('path');
 
-const TV_IP = '10.0.0.61';
+// Load TV IP from .env file
+let TV_IP = '10.0.0.75'; // Default fallback
+try {
+    const envPath = path.join(__dirname, '..', '.env');
+    if (fs.existsSync(envPath)) {
+        const envContent = fs.readFileSync(envPath, 'utf8');
+        const tvIpMatch = envContent.match(/^TV_IP=(.+)$/m);
+        if (tvIpMatch) {
+            TV_IP = tvIpMatch[1].trim();
+        }
+    }
+} catch (error) {
+    // Use fallback IP
+}
 const action = process.argv[2];
 const parameter = process.argv[3];
 

@@ -3,7 +3,7 @@
 # Alternative LG TV Power Off Script
 # Uses different methods to turn off the TV
 
-TV_IP="10.0.0.61"
+TV_IP="10.0.0.75"
 
 echo "Attempting to turn off TV using multiple methods..."
 

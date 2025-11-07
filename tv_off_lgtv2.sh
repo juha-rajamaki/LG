@@ -3,7 +3,7 @@
 # LG TV Power Off using lgtv2
 # More reliable method for newer LG webOS TVs
 
-TV_IP="10.0.0.61"
+TV_IP="10.0.0.75"
 
 # Check if lgtv2 is installed (global or local)
 LGTV2_CMD=""

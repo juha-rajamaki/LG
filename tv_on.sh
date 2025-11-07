@@ -4,7 +4,13 @@
 # Add Homebrew to PATH
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
-TV_IP="10.0.0.75"
+# Load TV IP from .env file
+if [ -f "$(dirname "$0")/../.env" ]; then
+    TV_IP=$(grep "^TV_IP=" "$(dirname "$0")/../.env" | cut -d'=' -f2)
+fi
+
+# Fallback to default if not found
+TV_IP=${TV_IP:-"10.0.0.75"}
 
 # Try to get MAC address from ARP table
 echo "Getting MAC address for TV at $TV_IP..."

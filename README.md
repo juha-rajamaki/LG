@@ -97,7 +97,7 @@ subprocess.run(["./LG/tv_input.sh", "hdmi2"])
 
 ## Configuration
 
-TV IP address is set to `10.0.0.61` in all scripts. If your TV IP changes, update the `TV_IP` variable in:
+TV IP address is set to `10.0.0.75` in all scripts. If your TV IP changes, update the `TV_IP` variable in:
 - `tv_on.sh`
 - `tv_off.sh`
 - `tv_input.sh`
@@ -128,6 +128,6 @@ Alternative Python-based control:
 
 # Usage
 lgtv scan              # Find TVs on network
-lgtv auth 10.0.0.61    # Pair with TV
+lgtv auth 10.0.0.75    # Pair with TV
 lgtv webos turnOff     # Turn off TV
 ```

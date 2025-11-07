@@ -10,7 +10,7 @@ Output:
 ```
 Turning TV ON...
 Sending Wake-on-LAN packet to TV...
-IP: 10.0.0.61
+IP: 10.0.0.75
 MAC: XX:XX:XX:XX:XX:XX
 Wake-on-LAN packet sent successfully!
 The TV should turn on within a few seconds.
@@ -23,7 +23,7 @@ The TV should turn on within a few seconds.
 Output:
 ```
 Turning TV OFF...
-Checking connection to TV at 10.0.0.61:3000...
+Checking connection to TV at 10.0.0.75:3000...
 TV is reachable. Sending power off command...
 Power off command sent successfully!
 The TV should turn off in a moment.
@@ -36,7 +36,7 @@ The TV should turn off in a moment.
 Output when TV is on:
 ```
 Checking TV status...
-✓ TV is reachable at 10.0.0.61
+✓ TV is reachable at 10.0.0.75
 ✓ webOS API is accessible (TV is ON)
 ```
 
@@ -189,17 +189,17 @@ which wakeonlan || echo "wakeonlan not installed - run: brew install wakeonlan"
 
 ### Test network connectivity to TV
 ```bash
-ping -c 3 10.0.0.61
+ping -c 3 10.0.0.75
 ```
 
 ### Check if webOS port is accessible
 ```bash
-nc -zv 10.0.0.61 3000
+nc -zv 10.0.0.75 3000
 ```
 
 ### Get TV's MAC address (when TV is on)
 ```bash
-arp -n 10.0.0.61
+arp -n 10.0.0.75
 ```
 
 ## Error Messages and Solutions
@@ -221,6 +221,6 @@ brew install wakeonlan
 ```bash
 # This happens when TV hasn't been seen on network yet
 # Solution: Turn TV on manually once, then try:
-ping -c 1 10.0.0.61
-arp -a | grep 10.0.0.61
+ping -c 1 10.0.0.75
+arp -a | grep 10.0.0.75
 ```

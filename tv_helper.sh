@@ -14,9 +14,16 @@ echo ""
 echo "2. Checking ARP table for known devices..."
 arp -a | grep -E "\\.61|LG|lg" || echo "No obvious TV found in ARP table"
 
+# Load TV IP from .env file
+if [ -f "$(dirname "$0")/../.env" ]; then
+    CONFIGURED_TV_IP=$(grep "^TV_IP=" "$(dirname "$0")/../.env" | cut -d'=' -f2)
+else
+    CONFIGURED_TV_IP="Not set in .env file"
+fi
+
 echo ""
 echo "3. Current TV configuration:"
-echo "   IP: 10.0.0.61 (configured in tv_on.sh)"
+echo "   IP: ${CONFIGURED_TV_IP} (from .env file)"
 echo ""
 
 echo "To fix TV control:"

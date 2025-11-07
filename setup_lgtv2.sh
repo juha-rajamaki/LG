@@ -28,7 +28,7 @@ mkdir -p ~/.lgtv2
 cat > ~/.lgtv2/config.json << EOF
 {
   "tv": {
-    "host": "10.0.0.61",
+    "host": "10.0.0.75",
     "name": "LG TV"
   }
 }
@@ -39,7 +39,7 @@ echo "Setup complete!"
 echo ""
 echo "Now you can use these commands:"
 echo "  lgtv2 --help                    # Show all commands"
-echo "  lgtv2 connect 10.0.0.61         # Connect and pair with TV"
+echo "  lgtv2 connect 10.0.0.75         # Connect and pair with TV"
 echo "  lgtv2 --powerOff                # Turn TV off"
 echo "  lgtv2 --input HDMI_1            # Switch to HDMI 1"
 echo "  lgtv2 --app netflix             # Launch Netflix"
@@ -48,6 +48,6 @@ echo "  lgtv2 --mute true               # Mute TV"
 echo ""
 echo "FIRST TIME SETUP:"
 echo "1. Make sure your TV is ON"
-echo "2. Run: lgtv2 connect 10.0.0.61"
+echo "2. Run: lgtv2 connect 10.0.0.75"
 echo "3. Accept the pairing request on your TV"
 echo "4. The pairing will be saved for future use"
