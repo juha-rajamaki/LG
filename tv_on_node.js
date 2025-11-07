@@ -4,7 +4,7 @@
 const dgram = require('dgram');
 const { exec } = require('child_process');
 
-const TV_IP = '10.0.0.61';
+const TV_IP = '10.0.0.75';
 const TV_MAC = 'dc:03:98:18:49:1c'; // Known MAC address from ARP cache
 
 // Function to get MAC address from ARP table
@@ -141,7 +141,7 @@ async function main() {
         console.log('1. Make sure the TV was on recently so its MAC is in ARP cache');
         console.log('2. Enable Wake-on-LAN in TV settings');
         console.log('3. Some TVs only support WOL over Ethernet, not WiFi');
-        console.log('4. Try: arp -a | grep 10.0.0.61  # to see if MAC is available');
+        console.log('4. Try: arp -a | grep 10.0.0.75  # to see if MAC is available');
         process.exit(1);
     }
 }

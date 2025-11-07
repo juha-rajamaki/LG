@@ -4,7 +4,7 @@
 # Main script to control LG 65NANO81 TV
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TV_IP="10.0.0.61"
+TV_IP="10.0.0.75"
 
 # Colors for output
 RED='\033[0;31m'
