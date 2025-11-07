@@ -5,7 +5,7 @@ const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path');
 
-const TV_IP = '10.0.0.61';
+const TV_IP = '10.0.0.75';
 const TV_PORT = 3000;
 const action = process.argv[2];
 
