@@ -5,7 +5,7 @@ const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path');
 
-const TV_IP = '10.0.0.75';
+const TV_IP = process.argv[3] || '10.0.0.75';  // Accept IP as 3rd argument, fallback to work TV
 const TV_PORT = 3000;
 const action = process.argv[2];
 
@@ -13,11 +13,12 @@ const action = process.argv[2];
 const keyFile = path.join(process.env.HOME, `.lgtv_${TV_IP.replace(/\./g, '_')}.key`);
 
 if (!action) {
-    console.log('Usage: node tv_simple.js <action>');
+    console.log('Usage: node tv_simple.js <action> [ip_address]');
     console.log('Actions:');
     console.log('  pair    - Pair with TV (one-time setup)');
     console.log('  off     - Turn TV off');
     console.log('  info    - Get TV info');
+    console.log('Example: node tv_simple.js off 192.168.1.168');
     process.exit(1);
 }
 

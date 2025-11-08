@@ -4,8 +4,8 @@
 const dgram = require('dgram');
 const { exec } = require('child_process');
 
-const TV_IP = '10.0.0.75';
-const TV_MAC = 'dc:03:98:18:49:1c'; // Known MAC address from ARP cache
+const TV_IP = process.argv[2] || '10.0.0.75';  // Accept IP as argument, fallback to work TV
+const TV_MAC = process.argv[3] || 'dc:03:98:18:49:1c'; // Accept MAC as argument, fallback to work TV MAC
 
 // Function to get MAC address from ARP table
 function getMacAddress(ip) {
